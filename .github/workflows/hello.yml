@@ -5,13 +5,17 @@ env:
 jobs:
   hello-world:
     runs-on: ubuntu-latest
+    env: 
+      MY_ENV_VAR: hello-world1
     steps:
       - name: Hello world
         uses: actions/hello-world-docker-action@v1
       - run: echo "${{env.MY_ENV_VAR}}"
   hello-world1:
+    env: 
+      MY_ENV_VAR: hello-world2
     needs: hello-world
     runs-on: macos-latest
     steps:
       - name: Hello world1
-        run: echo "Hello, world!"
+        run: echo "$MY_ENV_VAR"
