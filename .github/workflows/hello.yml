@@ -1,12 +1,14 @@
 name : hello-world
 on : [push, pull_request]
+env: 
+  MY_ENV_VAR: hello-world
 jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
       - name: Hello world
         uses: actions/hello-world-docker-action@v1
-      - run: echo "Hello, world!"
+      - run: echo "${{env.MY_ENV_VAR}}"
   hello-world1:
     needs: hello-world
     runs-on: macos-latest
