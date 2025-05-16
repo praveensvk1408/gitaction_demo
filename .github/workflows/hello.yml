@@ -13,3 +13,9 @@ jobs:
     steps:
       - name: Hello world1
         run: echo "Hello, world!"
+  hello-world2:
+    needs: hello-world
+    runs-on: macos-latest
+    steps:
+      - name: Hello world2
+        run: echo "Hello, world!"
