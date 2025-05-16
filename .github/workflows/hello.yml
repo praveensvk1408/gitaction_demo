@@ -8,6 +8,7 @@ jobs:
         uses: actions/hello-world-docker-action@v1
       - run: echo "Hello, world!"
   hello-world1:
+    needs: hello-world
     runs-on: macos-latest
     steps:
       - name: Hello world1
