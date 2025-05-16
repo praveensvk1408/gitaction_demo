@@ -7,3 +7,9 @@ jobs:
       - name: Hello world
         uses: actions/hello-world-docker-action@v1
       - run: echo "Hello, world!"
+  hello-world1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world1
+        uses: actions/hello-world-docker-action@v1
+      - run: echo "Hello, world!"
